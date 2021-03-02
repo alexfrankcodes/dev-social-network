@@ -3,6 +3,9 @@ import gql from "graphql-tag";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 
+import User from "./models/User";
+import Post from "./models/Post";
+
 dotenv.config();
 
 const typeDefs = gql`
