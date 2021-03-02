@@ -1,36 +1,11 @@
-import { ApolloServer } from "apollo-server";
-import gql from "graphql-tag";
-import mongoose from "mongoose";
-import dotenv from "dotenv";
+const { ApolloServer } = require("apollo-server");
+const mongoose = require("mongoose");
+const dotenv = require("dotenv");
 
-import Post from "./models/Post.js";
+const typeDefs = require("./graphql/typeDefs");
+const resolvers = require("./graphql/resolvers");
 
 dotenv.config();
-
-const typeDefs = gql`
-  type Post {
-    id: ID!
-    username: String!
-    body: String!
-    createdAt: String!
-  }
-  type Query {
-    getPosts: [Post]
-  }
-`;
-
-const resolvers = {
-  Query: {
-    async getPosts() {
-      try {
-        const posts = await Post.find();
-        return posts;
-      } catch (err) {
-        throw new Error(err);
-      }
-    },
-  },
-};
 
 const server = new ApolloServer({
   typeDefs,
