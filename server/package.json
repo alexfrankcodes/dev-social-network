@@ -1,0 +1,14 @@
+{
+  "name": "dev-social-network",
+  "version": "1.0.0",
+  "description": "A simple social network for developers, built with the MERN stack + GraphQL.",
+  "main": "index.js",
+  "author": "Alexander Frank",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "apollo-server": "2.21.0",
+    "graphql": "15.5.0",
+    "mongoose": "5.11.18"
+  }
+}
