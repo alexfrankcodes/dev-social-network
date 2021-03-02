@@ -1,4 +1,5 @@
-import { model, Schema } from "mongoose";
+import pkg from "mongoose";
+const { Schema, model } = pkg;
 
 const userSchema = new Schema({
   username: String,
@@ -7,4 +8,6 @@ const userSchema = new Schema({
   createdAt: String,
 });
 
-module.exports = model("User", userSchema);
+const User = model("User", userSchema);
+
+export default User;

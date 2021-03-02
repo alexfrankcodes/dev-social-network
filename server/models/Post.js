@@ -1,4 +1,5 @@
-import { model, Schema } from "mongoose";
+import pkg from "mongoose";
+const { Schema, model } = pkg;
 
 const postSchema = new Schema({
   body: String,
@@ -23,4 +24,6 @@ const postSchema = new Schema({
   },
 });
 
-module.exports = model("Post", postSchema);
+const Post = model("Post", postSchema);
+
+export default Post;

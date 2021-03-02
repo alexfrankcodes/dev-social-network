@@ -3,20 +3,32 @@ import gql from "graphql-tag";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 
-import User from "./models/User";
-import Post from "./models/Post";
+import Post from "./models/Post.js";
 
 dotenv.config();
 
 const typeDefs = gql`
+  type Post {
+    id: ID!
+    username: String!
+    body: String!
+    createdAt: String!
+  }
   type Query {
-    greeting: String!
+    getPosts: [Post]
   }
 `;
 
 const resolvers = {
   Query: {
-    greeting: () => "Hello GraphQL!",
+    async getPosts() {
+      try {
+        const posts = await Post.find();
+        return posts;
+      } catch (err) {
+        throw new Error(err);
+      }
+    },
   },
 };
 
