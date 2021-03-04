@@ -20,17 +20,16 @@ const typeDefs = gql`
     confirmPassword: String!
     email: String!
   }
-  # input LoginInput {
-  #   username: String!
-  #   password: String!
-  # }
+  input LoginInput {
+    username: String!
+    password: String!
+  }
   type Query {
     getPosts: [Post]
   }
   type Mutation {
     register(registerInput: RegisterInput): User!
-    login(username: String!, password: String!): User!
-    # login(loginInput: LoginInput): User!
+    login(loginInput: LoginInput): User!
   }
 `;
 
