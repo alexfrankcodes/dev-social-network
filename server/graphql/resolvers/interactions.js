@@ -60,7 +60,7 @@ module.exports = {
         } else {
           post.likes.push({
             username,
-            createdAt: new Date().toISOString,
+            createdAt: new Date().toISOString(),
           });
         }
         await post.save();
