@@ -6,6 +6,7 @@
   "author": "Alexander Frank",
   "license": "MIT",
   "scripts": {
+    "serve": "node index",
     "start": "nodemon index.js"
   },
   "dependencies": {
